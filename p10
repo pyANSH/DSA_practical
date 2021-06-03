@@ -1,0 +1,59 @@
+*
+Probleem Statement : 
+Implement the Heap/Shell sort algorithm implemented in Java demonstrating heap/shell data
+structure with modularity of programming language
+*/
+
+import java.util.*;
+class shell
+{   private
+    int a[]=new int[20];
+    Scanner in=new Scanner(System.in);
+  
+    void insert(int n)
+    {
+       for(int i=0;i<n;i++)
+       { 
+         a[i]=in.nextInt();
+       }
+    }
+    void shells(int n)
+    {
+        int gap,i,j,t;
+       
+        for(gap=n/2;gap>0;gap=gap/2)
+        {
+           for(i=gap;i<n;i++)
+           {
+              t=a[i];
+                for(j=i;j>=gap&&t<a[j-gap];j=j-gap)
+                {
+                   a[j]=a[j-gap];
+                }
+                a[j]=t;
+            }
+        }
+     }
+     void display(int n)
+     {
+       for(int i=0;i<n;i++)
+       { 
+          System.out.print(" "+a[i]);
+       }
+     }
+}
+class shellsort
+{
+    public static void main(String []args)
+    {   int n;
+        Scanner in=new Scanner(System.in);
+        shell s=new shell();
+        System.out.print("Enter Number of Elements : ");
+        n=in.nextInt();
+        System.out.println("Enter Elements of the array : ");
+        s.insert(n);
+        System.out.print("Sorted Array : ");
+        s.shells(n);
+        s.display(n);
+    }
+}   
