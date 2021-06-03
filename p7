@@ -103,6 +103,7 @@ j=queue[++front];
  cout<<"\n\t"<<k;
 if(r[i][k-1]!=0)
 {
+
 cout<<"\t\t"<<r[i][k-1];
 queue[++rear]=i;
 queue[++rear]=k-1;
