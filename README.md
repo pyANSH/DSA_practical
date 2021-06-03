@@ -1,2 +1,2 @@
 # DSA_practical
-all practicals with code
+all practicals  code
